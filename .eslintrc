@@ -1,0 +1,105 @@
+{
+    "parserOptions": {
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "experimentalObjectRestSpread": true,
+            "jsx": true,
+            "modules": true
+        }
+    },
+
+    "env": {
+        "browser": true,
+        "es6": true,
+        "mocha": true,
+        "node": true
+    },
+
+    "extends": "eslint:recommended",
+
+    "plugins": [
+        "react"
+    ],
+
+    "rules": {
+        // POSSIBLE ERRORS
+        "no-console": 0,
+
+        // BEST PRACTICES
+        "curly": 2,
+        "dot-location": [2, "property"],
+        "dot-notation": 2,
+        "no-alert": 2,
+        "no-caller": 2,
+        "no-eval": 2,
+        "no-extend-native": 2,
+        "no-extra-bind": 2,
+        "no-floating-decimal": 2,
+        "no-loop-func": 2,
+        "no-multi-spaces": 2,
+        "no-multi-str": 2,
+        "no-native-reassign": 2,
+        "no-new-func": 2,
+        "no-new-object": 2,
+        "no-new-wrappers": 2,
+        "no-return-assign": 2,
+        "no-self-compare": 2,
+        "no-sequences": 2,
+        "no-unused-expressions": 2,
+        "yoda": 2,
+
+        // VARIABLES
+        "no-shadow-restricted-names": 2,
+        "no-undef-init": 2,
+
+        // STYLISTIC ISSUES
+        "array-bracket-spacing": 2,
+        "brace-style": 2,
+        "comma-spacing": 2,
+        "comma-style": 2,
+        "computed-property-spacing": 2,
+        "eol-last": 2,
+        "indent": ["error", 2, {"SwitchCase": 1}],
+        "jsx-quotes": [2, "prefer-single"],
+        "key-spacing": 2,
+        "keyword-spacing": 2,
+        "linebreak-style": 2,
+        "no-array-constructor": 2,
+        "no-bitwise": 2,
+        "no-multiple-empty-lines": [2, {"max": 1}],
+        "no-spaced-func": 2,
+        "no-trailing-spaces": 2,
+        "object-curly-spacing": 2,
+        "one-var": [2, "never"],
+        "operator-linebreak": 2,
+        "quote-props": [2, "as-needed"],
+        "quotes": [2, "single", "avoid-escape"],
+        "semi": 2,
+        "semi-spacing": 2,
+        "space-before-blocks": 2,
+        "space-before-function-paren": [2, "never"],
+        "space-in-parens": 2,
+        "space-infix-ops": 2,
+        "space-unary-ops": 2,
+        "spaced-comment": [2, "always", { "exceptions": ["*"] }],
+
+        // REACT/JSX-SPECIFIC RULES
+        "react/jsx-closing-bracket-location": 2,
+        "react/jsx-curly-spacing": 2,
+        "react/jsx-indent": [2, 2],
+        "react/jsx-indent-props": [2, 2],
+        "react/jsx-key": 2,
+        "react/jsx-no-duplicate-props": 2,
+        "react/jsx-no-undef": 2,
+        "react/jsx-uses-react": 2,
+        "react/jsx-uses-vars": 2,
+        "react/no-deprecated": 2,
+        "react/no-unknown-property": 2,
+        "react/react-in-jsx-scope": 2,
+        "react/require-extension": 2,
+        "react/self-closing-comp": 2,
+        "react/wrap-multilines": 2,
+
+        "max-len": [1, 120, 2] // specify the maximum length of a line in your program (off by default)
+    }
+}
