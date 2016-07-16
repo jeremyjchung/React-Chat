@@ -25,8 +25,8 @@ export default class LoginForm extends Component {
     });
   }
   render() {
-    var disabled = <input type='submit' value='Login' disabled />;
-    var enabled = <input type='submit' value='Login' />;
+    var disabled = <button type='submit' disabled>Login</button>;
+    var enabled = <button type='submit'>Login</button>;
     var display = disabled;
 
     if (this.state.username && this.state.password) {
