@@ -18,12 +18,12 @@ var UserStore = Reflux.createStore({
         password: password
       },
       dataType: 'json',
-      success: function(data, status) {
-        this.state.status = status;
+      success: function(data, status, xhr) {
+        this.state.status = xhr.status;
         this.trigger(this.state);
       }.bind(this),
-      error: function(smg, status) {
-        this.state.status = status;
+      error: function(xhr) {
+        this.state.status = xhr.status;
         this.trigger(this.state);
       }.bind(this)
     });

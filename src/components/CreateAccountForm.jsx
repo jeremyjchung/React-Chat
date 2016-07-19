@@ -71,12 +71,21 @@ export default class CreateAccountForm extends Component {
 
     if (this.state.username && this.state.password && this.state.firstname && this.state.lastname) {
       display = enabled;
-      console.log('HELELELEEOEOEOEOEOOEOEOEOE');
+    }
+
+    var submissionFeedback;
+
+    if (this.state.status == '201') {
+      submissionFeedback = 'Account successfully created!';
+    } else if (this.state.status == '503') {
+      submissionFeedback = 'Server is down...';
+    } else if (this.state.status == '400') {
+      submissionFeedback = 'Username already exists.';
     }
 
     return (
       <div>
-        <h1>Create an Account</h1>
+        <h1>Create Account</h1>
         <form onSubmit={this.createAccount}>
           First Name <br/>
           <input type='text' value={this.state.firstname} onChange={this.onFirstnameChangeHandler} />
@@ -93,6 +102,7 @@ export default class CreateAccountForm extends Component {
           <span>
             <button onClick={this.clearForm}>Clear</button>
             {display}
+            {submissionFeedback}
           </span>
         </form>
       </div>
