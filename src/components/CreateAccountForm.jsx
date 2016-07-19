@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import UserActions from '../actions/UserActions';
+import UserStore from '../stores/UserStore';
 
 export default class CreateAccountForm extends Component {
   constructor() {
@@ -7,7 +9,8 @@ export default class CreateAccountForm extends Component {
       firstname: '',
       lastname: '',
       username: '',
-      password: ''
+      password: '',
+      status: ''
     };
 
     this.createAccount = this.createAccount.bind(this);
@@ -17,8 +20,15 @@ export default class CreateAccountForm extends Component {
     this.onFirstnameChangeHandler = this.onFirstnameChangeHandler.bind(this);
     this.onLastnameChangeHandler = this.onLastnameChangeHandler.bind(this);
   }
+  componentDidMount() {
+    UserStore.listen(function(userState) {
+      this.setState({status: userState.status});
+    }.bind(this));
+  }
   createAccount(e) {
     e.preventDefault();
+    UserActions.createUser(this.state.firstname, this.state.lastname, this.state.username, this.state.password);
+
     this.setState({
       firstname: '',
       lastname: '',
@@ -61,6 +71,7 @@ export default class CreateAccountForm extends Component {
 
     if (this.state.username && this.state.password && this.state.firstname && this.state.lastname) {
       display = enabled;
+      console.log('HELELELEEOEOEOEOEOOEOEOEOE');
     }
 
     return (
