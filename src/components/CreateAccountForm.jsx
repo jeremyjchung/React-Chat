@@ -21,9 +21,12 @@ export default class CreateAccountForm extends Component {
     this.onLastnameChangeHandler = this.onLastnameChangeHandler.bind(this);
   }
   componentDidMount() {
-    UserStore.listen(function(userState) {
+    this.unsubscribe = UserStore.listen(function(userState) {
       this.setState({status: userState.status});
     }.bind(this));
+  }
+  componentWillUnmount() {
+    this.unsubscribe();
   }
   createAccount(e) {
     e.preventDefault();
@@ -65,6 +68,7 @@ export default class CreateAccountForm extends Component {
     });
   }
   render() {
+    console.log(this.state);
     var disabled = <button type='submit' disabled>Sign Up</button>;
     var enabled = <button type='submit'>Sign Up</button>;
     var display = disabled;
