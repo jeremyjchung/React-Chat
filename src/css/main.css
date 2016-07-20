@@ -1,0 +1,12 @@
+body {
+  padding-top: 72px;
+  background-color: #93F3E9;
+}
+div.loginpage-bg {
+  padding: 15px;
+  background-color: #F2F6F6;
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  border-radius: 20px;
+}

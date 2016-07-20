@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router';
-import LoginForm from './LoginForm';
+import CreateAccountForm from './CreateAccountForm';
 
-export default class LoginContainer extends Component {
+export default class CreateAccountContainer extends Component {
   constructor() {
     super();
     this.state = {
@@ -12,7 +12,7 @@ export default class LoginContainer extends Component {
   render() {
     return (
       <div className='loginpage-bg'>
-        <LoginForm />
+        <CreateAccountForm />
         <span>
           <Link to={'/'}>Login</Link>
           <Link to={'signup'}>Create Account</Link>
