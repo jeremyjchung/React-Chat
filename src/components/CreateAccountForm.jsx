@@ -23,6 +23,13 @@ export default class CreateAccountForm extends Component {
   componentDidMount() {
     this.unsubscribe = UserStore.listen(function(userState) {
       this.setState({status: userState.status});
+
+      this.setState({
+        firstname: '',
+        lastname: '',
+        username: '',
+        password: ''
+      });
     }.bind(this));
   }
   componentWillUnmount() {
@@ -31,13 +38,6 @@ export default class CreateAccountForm extends Component {
   createAccount(e) {
     e.preventDefault();
     UserActions.createUser(this.state.firstname, this.state.lastname, this.state.username, this.state.password);
-
-    this.setState({
-      firstname: '',
-      lastname: '',
-      username: '',
-      password: ''
-    });
   }
   clearForm() {
     this.setState({
@@ -104,7 +104,7 @@ export default class CreateAccountForm extends Component {
           <input type='password' value={this.state.password} onChange={this.onPasswordChangeHandler} />
           <br/><br/>
           <span>
-            <button onClick={this.clearForm}>Clear</button>
+            <button type='reset' onClick={this.clearForm}>Clear</button>
             {display}
             {submissionFeedback}
           </span>
