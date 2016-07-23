@@ -68,7 +68,6 @@ export default class CreateAccountForm extends Component {
     });
   }
   render() {
-    console.log(this.state);
     var disabled = <button type='submit' disabled>Sign Up</button>;
     var enabled = <button type='submit'>Sign Up</button>;
     var display = disabled;

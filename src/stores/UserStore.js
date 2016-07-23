@@ -6,6 +6,7 @@ var UserStore = Reflux.createStore({
   listenables: UserActions,
   state: {
     status: '',
+    user: {},
     _id: ''
   },
   onCreateUser: function(firstname, lastname, username, password) {
@@ -37,6 +38,7 @@ var UserStore = Reflux.createStore({
       success: function(data, status, xhr) {
         this.state.status = xhr.status;
         this.state._id = data._id;
+        this.state.user = data;
         this.trigger(this.state);
       }.bind(this),
       error: function(xhr) {

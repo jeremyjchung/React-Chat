@@ -6,7 +6,7 @@ import UserStore from '../stores/UserStore';
 export default class LoginForm extends Component {
   constructor() {
     super();
-    this.state = {username: '', password: '', status: '', _id: ''};
+    this.state = {username: '', password: '', status: '', _id: '', user: {}};
 
     this.onUsernameChangeHandler = this.onUsernameChangeHandler.bind(this);
     this.onPasswordChangeHandler = this.onPasswordChangeHandler.bind(this);
@@ -14,10 +14,10 @@ export default class LoginForm extends Component {
   }
   componentDidMount() {
     this.unsubscribe = UserStore.listen(function(userState) {
-      this.setState({status: userState.status, _id: userState._id});
+      this.setState({status: userState.status, _id: userState._id, user: userState.user});
 
       if (this.state.status == '200') {
-        var userInfo = {username: this.state.username, password: this.state.password};
+        var userInfo = this.state.user;
         localStorage.setItem('userInfo', JSON.stringify(userInfo));
         hashHistory.push('messages/' + this.state._id);
       } else {
