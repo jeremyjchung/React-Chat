@@ -68,8 +68,8 @@ export default class CreateAccountForm extends Component {
     });
   }
   render() {
-    var disabled = <button type='submit' disabled>Sign Up</button>;
-    var enabled = <button type='submit'>Sign Up</button>;
+    var disabled = <button type='submit' className='btn btn-primary btn-sm' disabled>Sign Up</button>;
+    var enabled = <button type='submit' className='btn btn-primary btn-sm'>Sign Up</button>;
     var display = disabled;
 
     if (this.state.username && this.state.password && this.state.firstname && this.state.lastname) {
@@ -89,21 +89,35 @@ export default class CreateAccountForm extends Component {
     return (
       <div>
         <h1>Create Account</h1>
+        <br/>
         <form onSubmit={this.createAccount}>
-          First Name <br/>
-          <input type='text' value={this.state.firstname} onChange={this.onFirstnameChangeHandler} />
-          <br/><br/>
-          Last Name <br/>
-          <input type='text' value={this.state.lastname} onChange={this.onLastnameChangeHandler} />
-          <br/><br/>
-          Username <br/>
-          <input type='text' value={this.state.username} onChange={this.onUsernameChangeHandler} />
-          <br/><br/>
-          Password <br/>
-          <input type='password' value={this.state.password} onChange={this.onPasswordChangeHandler} />
-          <br/><br/>
-          <span>
-            <button type='reset' onClick={this.clearForm}>Clear</button>
+          <div className='form-group'>
+            <input
+              type='text' className='form-control' placeholder='firstname'
+              value={this.state.firstname} onChange={this.onFirstnameChangeHandler}
+            />
+          </div>
+          <div className='form-group'>
+            <input
+              type='text' className='form-control' placeholder='lastname'
+              value={this.state.lastname} onChange={this.onLastnameChangeHandler}
+            />
+          </div>
+          <div className='form-group'>
+            <input
+              type='text' className='form-control' placeholder='username'
+              value={this.state.username} onChange={this.onUsernameChangeHandler}
+            />
+          </div>
+          <div className='form-group'>
+            <input
+              type='password' className='form-control' placeholder='password'
+              value={this.state.password} onChange={this.onPasswordChangeHandler}
+            />
+          </div>
+          <br/>
+          <span className='login-createAccount-submit'>
+            <button type='reset' className='btn btn-primary btn-sm' onClick={this.clearForm}>Clear</button>
             {display}
             {submissionFeedback}
           </span>

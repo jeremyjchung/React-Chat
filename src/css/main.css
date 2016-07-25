@@ -2,11 +2,39 @@ body {
   padding-top: 72px;
   background-color: #93F3E9;
 }
+/* Login and Create Account css */
 div.loginpage-bg {
   padding: 15px;
   background-color: #F2F6F6;
   width: 50%;
   margin: auto;
-  text-align: center;
   border-radius: 20px;
 }
+div.login-form {
+  margin: 2% 25%;
+  width: 60%;
+}
+div.login-form form {
+  text-align: left;
+}
+div.login-form form input{
+  margin-bottom: 20px;
+  margin-right: 10px;
+}
+span.loginpage-links {
+  margin-left: 55%;
+}
+span.login-createAccount-submit {
+  color: red;
+}
+span.login-createAccount-submit button {
+  margin-right: 10px;
+}
+a {
+  padding: 10px;
+}
+a:hover {
+  font-size: 15px;
+  text-decoration: none;
+}
+/*****************************/

@@ -13,7 +13,7 @@ export default class CreateAccountContainer extends Component {
     return (
       <div className='loginpage-bg'>
         <CreateAccountForm />
-        <span>
+        <span className='loginpage-links'>
           <Link to={'/'}>Login</Link>
           <Link to={'signup'}>Create Account</Link>
         </span>
