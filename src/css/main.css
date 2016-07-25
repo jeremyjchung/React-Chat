@@ -7,6 +7,27 @@ div.loginpage-bg {
   background-color: #F2F6F6;
   width: 50%;
   margin: auto;
-  text-align: center;
   border-radius: 20px;
+}
+div.login-form {
+  margin: 2% 25%;
+  width: 50%;
+}
+div.login-form form {
+  text-align: left;
+  margin-left: 10px;
+}
+div.login-form form input{
+  margin-bottom: 20px;
+  margin-right: 10px;
+}
+span.loginpage-links {
+  margin-left: 70%;
+}
+a {
+  padding: 10px;
+}
+a:hover {
+  font-size: 15px;
+  text-decoration: none;
 }

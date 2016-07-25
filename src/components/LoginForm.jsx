@@ -46,8 +46,8 @@ export default class LoginForm extends Component {
     UserActions.login(this.state.username, this.state.password);
   }
   render() {
-    var disabled = <button type='submit' disabled>Login</button>;
-    var enabled = <button type='submit'>Login</button>;
+    var disabled = <button className='btn btn-primary btn-sm' type='submit' disabled>Login</button>;
+    var enabled = <button className='btn btn-primary btn-sm' type='submit'>Login</button>;
     var display = disabled;
 
     if (this.state.username && this.state.password) {
@@ -55,18 +55,20 @@ export default class LoginForm extends Component {
     }
 
     return (
-      <div>
+      <div className='login-form'>
         <h1>Welcome to KatChat!</h1>
         <br/>
-        <form onSubmit={this.onLogin}>
-          <input type='text' value={this.state.username} onChange={this.onUsernameChangeHandler} />
-          <br/>
-          username
-          <br/><br/>
-          <input type='password' value={this.state.password} onChange={this.onPasswordChangeHandler} />
-          <br/>
-          password
-          <br/><br/>
+        <form className='form-inline' onSubmit={this.onLogin}>
+          <div className='form-group'>
+            <input
+              type='text' placeholder='username' value={this.state.username} onChange={this.onUsernameChangeHandler}
+            />
+          </div>
+          <div className='form-group'>
+            <input
+              type='password' placeholder='password' value={this.state.password} onChange={this.onPasswordChangeHandler}
+            />
+          </div>
           {display}
         </form>
       </div>
