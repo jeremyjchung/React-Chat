@@ -7,6 +7,7 @@ export default class LoginForm extends Component {
   constructor() {
     super();
     this.state = {username: '', password: '', status: '', _id: '', user: {}};
+    this.feedback = '';
 
     this.onUsernameChangeHandler = this.onUsernameChangeHandler.bind(this);
     this.onPasswordChangeHandler = this.onPasswordChangeHandler.bind(this);
@@ -21,6 +22,7 @@ export default class LoginForm extends Component {
         localStorage.setItem('userInfo', JSON.stringify(userInfo));
         hashHistory.push('messages/' + this.state._id);
       } else {
+        this.feedback = 'Invalid username and password combination.';
         this.setState({
           username: '',
           password: ''
@@ -61,15 +63,21 @@ export default class LoginForm extends Component {
         <form className='form-inline' onSubmit={this.onLogin}>
           <div className='form-group'>
             <input
-              type='text' placeholder='username' value={this.state.username} onChange={this.onUsernameChangeHandler}
+              type='text' className='form-control' placeholder='username'
+              value={this.state.username} onChange={this.onUsernameChangeHandler}
             />
           </div>
           <div className='form-group'>
             <input
-              type='password' placeholder='password' value={this.state.password} onChange={this.onPasswordChangeHandler}
+              type='password' className='form-control' placeholder='password'
+              value={this.state.password} onChange={this.onPasswordChangeHandler}
             />
           </div>
-          {display}
+          <br/>
+          <span className='login-createAccount-submit'>
+            {display}
+            {this.feedback}
+          </span>
         </form>
       </div>
     );
