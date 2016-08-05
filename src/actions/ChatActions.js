@@ -2,7 +2,11 @@ var Reflux = require('reflux');
 
 var ChatActions = Reflux.createActions([
   'sendMessage',
-  'getAllFriends'
+  'receiveMessages',
+  'joinRoom',
+  'getAllFriends',
+  'openChatRoom',
+  'createChatRoom'
 ]);
 
 module.exports = ChatActions;

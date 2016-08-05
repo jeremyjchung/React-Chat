@@ -25,16 +25,18 @@
     "node-sass": "^3.8.0",
     "react-addons-test-utils": "^15.1.0",
     "sass-loader": "^4.0.0",
+    "url-assembler": "^1.2.4",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.0",
     "webpack-merge": "^0.14.0"
   },
   "dependencies": {
     "babel-preset-stage-1": "^6.1.18",
-    "lodash": "^3.10.1",
+    "lodash": "^4.14.1",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
     "react-router": "^2.5.2",
-    "reflux": "^0.4.1"
+    "reflux": "^0.4.1",
+    "socket.io-client": "^1.4.8"
   }
 }
