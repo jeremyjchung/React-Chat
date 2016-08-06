@@ -36,15 +36,14 @@ export default class ChatMessagesList extends Component {
       messages = this.state.messages.map((msg, index) => {
         return (
           <tr key={index}>
-            <td>{msg.firstname + ': '}</td>
-            <td>{msg.message}</td>
+            <td className='message'>{msg.firstname + ': ' + msg.message}</td>
           </tr>
         );
       });
     }
 
     return (
-      <div>
+      <div className='message-list-container'>
         <table>
           <tbody>
             {messages}

@@ -24,9 +24,11 @@ export default class ChatInputArea extends Component {
   }
   render() {
     return (
-      <form onSubmit={this.sendMessage}>
-        <input value={this.state.message} type='text' onChange={this.onChangeHandler} />
-        <button type='submit' className='btn btn-primary btn-sm'>Send</button>
+      <form className='message-sender-container' onSubmit={this.sendMessage}>
+        <input
+          id='message-input' value={this.state.message} type='text' onChange={this.onChangeHandler} autoFocus={false}
+        />
+        <button id='message-send' type='submit' className='btn btn-primary btn-sm'>Send</button>
       </form>
     );
   }

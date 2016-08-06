@@ -32,15 +32,18 @@ export default class ChatFriendsList extends Component {
   render() {
     var friendsTable = this.state.friendsList.map((friend, index) => {
       return (
-        <tr key={index} onClick={() => this.onFriendsListClick(index)}>
-          <td>{friend.firstname} {friend.lastname}</td>
+        <tr className='friend-name-row' key={index} onClick={() => this.onFriendsListClick(index)}>
+          <td className='friends-list-cell'>{friend.firstname} {friend.lastname}</td>
         </tr>
       );
     });
 
     return (
-      <table>
+      <table className='friends-list-container'>
         <tbody>
+          <tr className='friend-list-header'>
+            <th>Friends</th>
+          </tr>
           {friendsTable}
         </tbody>
       </table>
