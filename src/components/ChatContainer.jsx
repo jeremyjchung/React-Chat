@@ -3,6 +3,7 @@ import ChatHeader from './ChatHeader';
 import ChatFriendsList from './ChatFriendsList';
 import ChatMessagesList from './ChatMessagesList';
 import ChatInputArea from './ChatInputArea';
+import ChatWelcomeModal from './ChatWelcomeModal';
 import ChatActions from '../actions/ChatActions';
 
 export default class ChatContainer extends Component {
@@ -21,6 +22,7 @@ export default class ChatContainer extends Component {
   render() {
     return (
       <div className='chat-container'>
+        <ChatWelcomeModal currentUser={this.state}/>
         <div className='chatroom-header'>
           <ChatHeader />
         </div>
