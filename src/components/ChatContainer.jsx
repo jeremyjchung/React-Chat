@@ -20,11 +20,17 @@ export default class ChatContainer extends Component {
   }
   render() {
     return (
-      <div>
-        <ChatHeader />
-        <ChatFriendsList currentUser={this.state}/>
-        <ChatMessagesList currentUser={this.state}/>
-        <ChatInputArea currentUser={this.state}/>
+      <div className='chat-container'>
+        <div className='chatroom-header'>
+          <ChatHeader />
+        </div>
+        <div className='left-container'>
+          <ChatFriendsList currentUser={this.state}/>
+        </div>
+        <div className='right-container'>
+          <ChatMessagesList currentUser={this.state}/>
+          <ChatInputArea currentUser={this.state}/>
+        </div>
       </div>
     );
   }
