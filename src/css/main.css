@@ -95,11 +95,11 @@ td.friends-list-cell, th {
 }
 /***************************/
 
-/** RIghtside of Chat Container **/
-div.right-container {
+/** Middle section of Chat Container **/
+div.middle-container {
+  float: left;
   width: 60%;
   height: 85%;
-  margin-left: 15%;
   border-right-style: solid;
   border-width: 1px;
 }
@@ -129,3 +129,25 @@ form.message-sender-container {
   width: 13%;
 }
 /****************************/
+
+/** Right section of Chat Container **/
+div.right-container {
+  float: left;
+  width: 25%;
+  height: 85%;
+}
+div.detail-container {
+  padding-top: 20%;
+  text-align: center;
+}
+div.detail-container h1 {
+  font-weight: 400;
+}
+div.detail-container h2, h3, h4 {
+  font-weight: 200;
+}
+div.detail-container h4 {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+/**************************************/
