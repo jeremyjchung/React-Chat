@@ -10,6 +10,7 @@ var ChatStore = Reflux.createStore({
   state: {
     status: '',
     userList: [],
+    otherUser: {},
     chatRoom: {},
     isRoomCreated: false,
     isRoomOpened: false
@@ -50,7 +51,7 @@ var ChatStore = Reflux.createStore({
       dataType: 'json',
       data: users,
       success: function(data, status, xhr) {
-        console.log(data);
+        this.state.otherUser = user2;
         this.state.status = xhr.status;
         this.state.chatRoom = data;
         this.state.isRoomCreated = true;
@@ -85,8 +86,8 @@ var ChatStore = Reflux.createStore({
         if (!data || data.length == 0) {
           ChatActions.createChatRoom(user1, user2);
         } else {
+          this.state.otherUser = user2;
           this.state.chatRoom = data[0];
-          console.log(this.state.chatRoom);
           this.state.isRoomOpened = true;
           this.trigger(this.state);
           this.state.isRoomOpened = false;
