@@ -7,7 +7,8 @@ export default class ChatFriendsList extends Component {
     super(props);
     this.state = {
       friendsList: [],
-      friendsListStatus: ''
+      friendsListStatus: '',
+      initialRoomOpen: false
     };
 
     this.onFriendsListClick = this.onFriendsListClick.bind(this);
@@ -19,6 +20,14 @@ export default class ChatFriendsList extends Component {
         friendsList: storeState.userList
       });
     }.bind(this));
+  }
+  componentDidUpdate() {
+    if (!this.state.initialRoomOpen && this.state.friendsListStatus == '200') {
+      ChatActions.openChatRoom(this.props.currentUser, this.state.friendsList[0]);
+      this.setState({
+        initialRoomOpen: true
+      });
+    }
   }
   componentWillMount() {
     ChatActions.getAllFriends(this.props.currentUser.username);

@@ -4,6 +4,7 @@ import ChatFriendsList from './ChatFriendsList';
 import ChatMessagesList from './ChatMessagesList';
 import ChatInputArea from './ChatInputArea';
 import ChatWelcomeModal from './ChatWelcomeModal';
+import ChatDetailContainer from './ChatDetailContainer';
 import ChatActions from '../actions/ChatActions';
 
 export default class ChatContainer extends Component {
@@ -22,16 +23,19 @@ export default class ChatContainer extends Component {
   render() {
     return (
       <div className='chat-container'>
-        <ChatWelcomeModal currentUser={this.state}/>
+        <ChatWelcomeModal currentUser={this.state} />
         <div className='chatroom-header'>
           <ChatHeader />
         </div>
         <div className='left-container'>
-          <ChatFriendsList currentUser={this.state}/>
+          <ChatFriendsList currentUser={this.state} />
+        </div>
+        <div className='middle-container'>
+          <ChatMessagesList currentUser={this.state} />
+          <ChatInputArea currentUser={this.state} />
         </div>
         <div className='right-container'>
-          <ChatMessagesList currentUser={this.state}/>
-          <ChatInputArea currentUser={this.state}/>
+          <ChatDetailContainer currentUser={this.state} />
         </div>
       </div>
     );
