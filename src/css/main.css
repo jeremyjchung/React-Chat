@@ -97,9 +97,9 @@ td.friends-list-cell, th {
 
 /** RIghtside of Chat Container **/
 div.right-container {
-  width: 65%;
+  width: 60%;
   height: 85%;
-  margin-left: 17%;
+  margin-left: 15%;
   border-right-style: solid;
   border-width: 1px;
 }
