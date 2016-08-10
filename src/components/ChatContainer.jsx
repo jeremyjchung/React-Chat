@@ -25,7 +25,7 @@ export default class ChatContainer extends Component {
       <div className='chat-container'>
         <ChatWelcomeModal currentUser={this.state} />
         <div className='chatroom-header'>
-          <ChatHeader />
+          <ChatHeader currentUser={this.state} />
         </div>
         <div className='left-container'>
           <ChatFriendsList currentUser={this.state} />
