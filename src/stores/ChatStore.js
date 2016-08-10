@@ -102,7 +102,6 @@ var ChatStore = Reflux.createStore({
     socket.emit('join-room', roomId, firstname);
   },
   onSendMessage(message, name) {
-    console.log(message);
     socket.emit('message', message);
     this.state.chatRoom.messages.push({firstname: name, message: message});
     if (this.state.chatRoom.messages.length > 50) {
@@ -118,6 +117,9 @@ var ChatStore = Reflux.createStore({
       }
       this.trigger(this.state);
     }.bind(this));
+  },
+  onSignOut() {
+    socket.emit('leave-room');
   }
 });
 

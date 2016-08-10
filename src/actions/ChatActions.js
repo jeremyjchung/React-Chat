@@ -6,7 +6,8 @@ var ChatActions = Reflux.createActions([
   'joinRoom',
   'getAllFriends',
   'openChatRoom',
-  'createChatRoom'
+  'createChatRoom',
+  'signOut'
 ]);
 
 module.exports = ChatActions;
