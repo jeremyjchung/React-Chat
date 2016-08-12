@@ -97,6 +97,7 @@ div.chat-header-right img:hover {
   height: inherit;
   width: inherit;
   text-align: center;
+  margin-top: 20px;
   background-color: #F1F5F5;
 }
 .account-popover button {
